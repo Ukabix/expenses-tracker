@@ -4,6 +4,9 @@ import ExpenseDate from './ExpenseDate';
 import './ExpenseItem.css';
 
 const ExpenseItem = (props) => {
+  const clickedHandler = () => {
+    console.log('Clicked!!!');
+  };
   return (
     <Card className='expense-item'>
       {/* pass props to subcomponent */}
@@ -14,6 +17,8 @@ const ExpenseItem = (props) => {
           ${props.amount}
         </div>
       </div>
+      {/* special prop to fire eventlistener - put js expression or f ponmiter here {} */}
+      <button onClick={clickedHandler}>Change Title</button>
     </Card>
   );
 }
