@@ -1,3 +1,5 @@
+// for older react
+import React from 'react';
 // import ExpenseItem from './components/ExpenseItem';
 import Expenses from './components/Expenses';
 
@@ -34,6 +36,11 @@ function App() {
       <Expenses items={expenses} />
     </div>
   );
+  // alternative using React object - import React from 'react';
+  // return React.createElement(
+  //   'div', 
+  //   {}, React.createElement('h2', {}, 'Let\'s get started!'),
+  //   React.createElement(Expenses, {items: expenses}) );
 }
 
 export default App;
