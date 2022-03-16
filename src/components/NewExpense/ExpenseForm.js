@@ -5,6 +5,7 @@ const ExpenseForm = () => {
   const [enteredTitle, setEnteredTitle] = useState('');
   const [enteredAmount, setEnteredAmount] = useState('');
   const [enteredDate, setEnteredDate] = useState('');
+
   const titleChangeHandler = (event) => {
     setEnteredTitle(event.target.value);
   };
@@ -14,6 +15,36 @@ const ExpenseForm = () => {
   const dateChangeHandler = (event) => {
     setEnteredDate(event.target.value);
   };
+
+    // // alternative approach-> one state via object - updated 3 props
+    const [userInput, setUserInput] = useState({
+      enteredTitle: '',
+      enteredAmount: '',
+      enteredDate: ''
+    });
+
+    const titleChangeHandler = (event) => {
+      // pass an object or other keys will be lost!
+      setUserInput({
+        // copy existing values for rest keys or data will get lost!
+        ...userInput,
+        enteredTitle: event.target.value
+      })
+    };
+    const amountChangeHandler = (event) => {
+      setUserInput({
+        ...userInput,
+        enteredAmount: event.target.value
+      })
+    };
+    const dateChangeHandler = (event) => {
+      setUserInput({
+        ...userInput,
+        enteredDate: event.target.value
+      })
+    };
+    };
+  
 
 
   return (
