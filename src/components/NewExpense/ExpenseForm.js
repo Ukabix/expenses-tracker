@@ -18,7 +18,6 @@ const ExpenseForm = (props) => {
   const dateChangeHandler = (event) => {
     setEnteredDate(event.target.value);
   };
-
   // // alternative approach-> one state via object - updated 3 props
   // const [userInput, setUserInput] = useState({
   //   enteredTitle: '',
